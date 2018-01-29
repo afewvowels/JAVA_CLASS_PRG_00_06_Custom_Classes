@@ -14,17 +14,49 @@ public class Clock {
     private int hour;
     private int minute;
     
-    // Constructor sets initial time to 00:00W
+    // Constructor sets initial time to 00:00
     public Clock() {
         hour = 0;
         minute = 0;
     }
     
+    // Setter for hour
     public void setHour(int input) {
-        hour = input;
+        if(input >= 0 && input < 24)
+            hour = input;
     }
     
+    // Setter for minute
     public void setMinute(int input) {
-        minute = input;
+        if(input >= 0 && input < 60)
+            minute = input; 
+    }
+    
+    // Getter for hour
+    public int getHour() {
+        return hour;
+    }
+    
+    // Getter for minute
+    public int getMinute() {
+        return minute;
+    }
+    
+    public void incrementMinute() {
+        minute++;
+        if(minute > 59) {
+            minute = 0;
+            hour++;
+            if(hour > 23) {
+                hour = 0;
+            }
+        }
+    }
+    
+    public void incrementHour() {
+        if(hour < 24)
+            hour++;
+        else
+            hour = 0;
     }
 }
