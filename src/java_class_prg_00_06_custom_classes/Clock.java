@@ -16,47 +16,47 @@ public class Clock {
     
     // Constructor sets initial time to 00:00
     public Clock() {
-        hour = 0;
-        minute = 0;
+        this.hour = 0;
+        this.minute = 0;
     }
     
     // Setter for hour
-    public void setHour(int input) {
-        if(input >= 0 && input < 24)
-            hour = input;
+    public void setHour(int hour) {
+        if(hour >= 0 && hour < 24)
+            this.hour = hour;
     }
     
     // Setter for minute
-    public void setMinute(int input) {
-        if(input >= 0 && input < 60)
-            minute = input; 
+    public void setMinute(int minute) {
+        if(minute >= 0 && minute < 60)
+            this.minute = minute; 
     }
     
     // Getter for hour
     public int getHour() {
-        return hour;
+        return this.hour;
     }
     
     // Getter for minute
     public int getMinute() {
-        return minute;
+        return this.minute;
     }
     
     public void incrementMinute() {
-        minute++;
-        if(minute > 59) {
-            minute = 0;
-            hour++;
-            if(hour > 23) {
-                hour = 0;
+        this.minute++;
+        if(this.minute > 59) {
+            this.minute = 0;
+            this.hour++;
+            if(this.hour > 23) {
+                this.hour = 0;
             }
         }
     }
     
     public void incrementHour() {
-        if(hour < 24)
-            hour++;
+        if(this.hour < 24)
+            this.hour++;
         else
-            hour = 0;
+            this.hour = 0;
     }
 }
