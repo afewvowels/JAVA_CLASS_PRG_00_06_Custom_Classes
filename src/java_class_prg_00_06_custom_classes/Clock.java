@@ -14,6 +14,12 @@ public class Clock {
     private int hour;
     private int minute;
     
+    // Constructor overloading
+    public Clock(int hour, int minute) {
+        this.hour = hour;
+        this.minute = minute;
+    }
+    
     // Constructor sets initial time to 00:00
     public Clock() {
         this.hour = 0;
@@ -32,14 +38,36 @@ public class Clock {
             this.minute = minute; 
     }
     
+    public void setTime(int hour, int minute) {
+        if(minute >= 0 && minute < 60) {
+//            this.minute = minute;
+            setMinute(minute);
+        }
+        
+        
+        if(hour >= 0 && hour < 23) {
+//            this.hour = hour;
+            setHour(hour);
+        }
+            
+    }
+    
     // Getter for hour
-    public int getHour() {
-        return this.hour;
+    public String getHour() {
+        return String.format("%02d", this.hour);
     }
     
     // Getter for minute
-    public int getMinute() {
-        return this.minute;
+    public String getMinute() {
+        return String.format("%02d", this.minute);
+    }
+    
+    public String getTime() {
+        String hr = String.format("%02d", this.hour);
+        String mn = String.format("%02d", this.minute);
+        String time = hr + ":" + mn;
+        
+        return time;
     }
     
     public void incrementMinute() {
@@ -58,5 +86,11 @@ public class Clock {
             this.hour++;
         else
             this.hour = 0;
+    }
+    
+    public String toString() {
+//        String debugMessage;
+        
+        return "hour: "+getHour()+" minute: "+getMinute();
     }
 }

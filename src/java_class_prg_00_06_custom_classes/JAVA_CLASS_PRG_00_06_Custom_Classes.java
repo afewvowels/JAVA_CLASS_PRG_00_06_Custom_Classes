@@ -49,6 +49,9 @@ public class JAVA_CLASS_PRG_00_06_Custom_Classes {
 //            System.out.println(clocks[i].getHour() + ":" + clocks[i].getMinute());
             System.out.println(clocks[i].toString());
         }
+        
+        System.out.println(clockA.getTime());
+        System.out.println(clockB.getTime());
     }
     
 }
