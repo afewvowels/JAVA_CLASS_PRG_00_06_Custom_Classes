@@ -52,6 +52,52 @@ public class JAVA_CLASS_PRG_00_06_Custom_Classes {
         
         System.out.println(clockA.getTime());
         System.out.println(clockB.getTime());
+        
+        // Gap between different sections
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        
+        // Inheritance examples with SecondClock
+        System.out.println("Second clock examples:\n");
+        
+        SecondClock secondClock = new SecondClock();
+        
+        System.out.println("Current time: " + secondClock.getTime());
+        
+        System.out.println("Current time: " + secondClock.getHour() + ":" +
+                secondClock.getMinute() + ":" + secondClock.getSecond());
+        
+        Clock clockC = new Clock(12,12);
+        SecondClock secondClockA = new SecondClock(12,12,12);
+        
+        System.out.println(clockC.getTime());
+        System.out.println(secondClockA.getTime());
+        
+        // Polymorphism example
+        // Variable of base class type
+        Clock clockP = new Clock();
+        
+        // Object of derived class
+        SecondClock scP = new SecondClock();
+        
+        // Legal declaration
+        clockP = scP;
+        
+        // Illegal, cannot go in other direction.
+        // scP = clockP;
+        
+        // Good use, multiple derived classes in an array
+        // of the base class
+        Clock[] clocksArr = new Clock[3];
+        clocksArr[0] = new SecondClock(12,15,17);
+        clocksArr[1] = new Clock(3,57);
+        clocksArr[2] = new Timer();
+        
+        for(int i = 0 ; i < 3 ; i++) {
+            clocksArr[i].incrementMinute();
+        }
     }
-    
 }
